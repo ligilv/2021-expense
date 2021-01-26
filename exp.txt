@@ -1,0 +1,14 @@
+components needed
+Header
+balance    ==  income - expnese   state
+income and expese  state
+icome will be set by the user
+expnse will egt from todo
+History
+todo kind off
+and reverse the array to show latest
+
+
+
+add transactio
+text input and value  input

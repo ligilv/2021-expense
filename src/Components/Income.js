@@ -23,7 +23,7 @@ function Income() {
           onChange={trackinput}
         ></input>
         <button type="submit" onClick={setit}>
-          add
+          {hide ? "" : "Add"}
         </button>
       </form>
       {incometrack >= 0 || "" ? (

@@ -7,9 +7,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">Expense</header>
+      Balance is
       <Income />
       <Expense />
-
       <History />
     </div>
   );

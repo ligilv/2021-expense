@@ -3,16 +3,16 @@ import React, { useState } from "react";
 function Expense() {
   //sum of todos
   const [item, setItem] = useState("");
-  const [arrayItem, setArrayItem] = useState([]);
-  const [cost, setCost] = useState([]);
-  const [arrayCost, setArrayCost] = useState([]);
+  const [cost, setCost] = useState("");
+  const [buton, setbutton] = useState(true);
+  const [arrayItem, setArrayItem] = useState([]); //pushing tis value in objExpense
+  const [objExpense, setObjExpense] = useState([]);
+  const [arrayCost, setArrayCost] = useState([]); // pushing tis value in objExpense
   const [expense, setExpense] = useState([0]);
   const [expenseList, setExpenseList] = useState([]);
 
   const itemchange = (e) => {
     setItem(e.target.value);
-
-    // console.log(`${item} changed`);
   };
   const costChanged = (e) => {
     setCost(e.target.value);
@@ -22,12 +22,13 @@ function Expense() {
   //parseint as number added in array was in text, to cnvert it into number and not  in text
   const added = (e) => {
     e.preventDefault();
+
     setExpense([...expense, parseInt(cost)]);
     setArrayItem([...arrayItem, item]);
     setArrayCost([...arrayCost, cost]);
-    console.log(arrayItem);
+    setObjExpense([...objExpense, { item, cost }]);
+    setCost("");
     setItem("");
-    setCost(" ");
   };
   return (
     <div>
@@ -48,16 +49,22 @@ function Expense() {
           onChange={costChanged}
           value={cost}
         ></input>
-        <button type="submit" onClick={added}>
-          submit
+        <button
+          type="submit"
+          onClick={added}
+          //added conditional rendering, if I used usestate to change it ends up in warning that I will get infinite loop
+          disabled={item === "" || cost === "" ? true : false}
+        >
+          {item === "" ? "" : "" || cost === "" ? "enter price" : "add"}
         </button>
       </form>
-      {arrayItem.map((list, key) => {
-        return <h1 key={key}>{list}</h1>;
-      })}
       <br></br>
-      {arrayCost.map((list, key) => {
-        return <h1 key={key}>{list}</h1>;
+      {objExpense.map(({ item, cost }, i) => {
+        return (
+          <h1 key={i}>
+            {item} ----{cost}
+          </h1>
+        );
       })}
     </div>
   );

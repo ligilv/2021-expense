@@ -4,6 +4,14 @@ balance    ==  income - expnese   state
 income and expese  state
 icome will be set by the user
 expnse will egt from todo
+========================================================================
+expense component feature 
+    add item and price
+    if item or any field is empty the button will be disabled, conditional rendering is used
+    current expense is beign calculate by adding array of price
+    combined the array and item array in array of objects to render them in <h1>
+
+================================
 History
 todo kind off
 and reverse the array to show latest

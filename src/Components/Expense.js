@@ -4,7 +4,6 @@ function Expense() {
   //sum of todos
   const [item, setItem] = useState("");
   const [cost, setCost] = useState("");
-  const [buton, setbutton] = useState(true);
   const [arrayItem, setArrayItem] = useState([]); //pushing tis value in objExpense
   const [objExpense, setObjExpense] = useState([]);
   const [arrayCost, setArrayCost] = useState([]); // pushing tis value in objExpense

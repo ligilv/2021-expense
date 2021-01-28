@@ -13,7 +13,14 @@ function Income() {
     setHide(!hide);
   };
   return (
-    <div>
+    <div
+      style={{
+        width: "50%",
+        margin: "0 auto",
+        padding: "0",
+        outline: "red 2px solid",
+      }}
+    >
       <form>
         <input
           //conditiional rendering in style input when income is added it get hidden

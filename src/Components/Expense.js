@@ -30,7 +30,15 @@ function Expense() {
     setItem("");
   };
   return (
-    <div>
+    <div
+      style={{
+        width: "50%",
+        margin: "0 auto",
+        padding: "8px",
+        border: "blue 1px solid",
+        borderRadius: "10px",
+      }}
+    >
       Current Expense is &nbsp;
       {expense.reduce((a, b) => {
         return a + b;
@@ -54,15 +62,28 @@ function Expense() {
           //added conditional rendering, if I used usestate to change it ends up in warning that I will get infinite loop
           disabled={item === "" || cost === "" ? true : false}
         >
-          {item === "" ? "" : "" || cost === "" ? "enter price" : "add"}
+          Add
         </button>
       </form>
       <br></br>
       {objExpense.map(({ item, cost }, i) => {
         return (
-          <h1 key={i}>
-            {item} ----{cost}
-          </h1>
+          <h2
+            key={i}
+            style={{
+              border: "2px red solid",
+              width: " 50%",
+              display: "flex",
+              flexDirection: "row",
+              overflow: "auto",
+              justifyContent: "space-between",
+            }}
+          >
+            <div style={{}}>
+              {i + 1}) {item}
+            </div>
+            <div style={{}}>${cost}</div>
+          </h2>
         );
       })}
     </div>
